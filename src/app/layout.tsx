@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Roboto } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
+import { SessionProvider } from "next-auth/react";
+import Providers from "@/common/Provider";
+
+const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -11,12 +15,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+  params: { session, ...params},
+}: {
   children: React.ReactNode;
-}>) {
+  params: { session: any };
+}) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={roboto.className}>
+        <Providers session={session}>
+          {children}
+        </Providers>
+      </body>
+      <GoogleAnalytics gaId="G-WZLL92ML0R" />
     </html>
   );
 }
