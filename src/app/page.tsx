@@ -7,9 +7,10 @@ import Link from "next/link";
 
 export default function Home() {
 
-  const discord = "https://discord.gg/nextui";
+  const discord = "https://discord.gg/dUw4Xkdn7x";
   const github = "https://github.com/Justus-Braun";
   const repo = github + "/my-website";
+  const mailto = "mailto:justusbraun03@gmail.com"
 
   return (
     <main className="h-screen bg-[#282c34]">
@@ -26,7 +27,7 @@ export default function Home() {
             <Link href={repo} >
               <RepoIcon />
             </Link>
-            <Link href={"mailto:justusbraun03@gmail.com"}>
+            <Link href={mailto}>
               <MailIcon />
             </Link>
           </div>
