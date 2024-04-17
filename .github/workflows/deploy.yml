@@ -10,8 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Copy files to public
-      run: mkdir /home/website-new/actions-runner/_work/my-website/my-website/public
-      run: cp /home/website-new/klausuren/ /home/website-new/actions-runner/_work/my-website/my-website/public -r
+      run: mkdir /home/website-new/actions-runner/_work/my-website/my-website/public |
+        cp /home/website-new/klausuren/ /home/website-new/actions-runner/_work/my-website/my-website/public -r
     - name: create env file
       run: echo ${{secrets.ENV}} >> .env.production
     - name: Run the Compose
