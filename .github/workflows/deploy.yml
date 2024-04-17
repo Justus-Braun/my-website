@@ -10,4 +10,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Run the Compose
-      run: docker compose up -d --build
+      run: docker compose up --build --detach
