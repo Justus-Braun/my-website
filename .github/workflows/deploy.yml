@@ -12,4 +12,4 @@ jobs:
     - name: create env file
       run: echo ${{secrets.ENV}} >> .env.production
     - name: Run the Compose
-      run: docker-compose up --detach
+      run: docker-compose up --build --detach
