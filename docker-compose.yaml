@@ -5,7 +5,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile 
-    volumes:
-      - '/home/website-new/klausuren/:/app/public/'
     ports:
       - "80:3000"
