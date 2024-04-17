@@ -2,11 +2,9 @@ import { DiscordIcon } from "@/assets/DiscordIcon";
 import { GithubIcon } from "@/assets/GithubIcon";
 import { MailIcon } from "@/assets/MailIcon";
 import { RepoIcon } from "@/assets/RepoIcon";
-import { Button, Image } from "@nextui-org/react";
 import Link from "next/link";
 
 export default function Home() {
-
   const discord = "https://discord.gg/dUw4Xkdn7x";
   const github = "https://github.com/Justus-Braun";
   const repo = github + "/my-website";

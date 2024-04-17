@@ -1,5 +1,5 @@
 import NextAuth from "next-auth"
-import GitHubProvider, { GithubProfile } from "next-auth/providers/github";
+import GitHubProvider from "next-auth/providers/github";
 
 const allowedEmails = [
     'justusbraun03@gmail.com'

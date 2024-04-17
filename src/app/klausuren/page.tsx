@@ -1,4 +1,4 @@
-import { Link } from "@nextui-org/react";
+import Link from "next/link"
 
 export default function Page() {
     return (
@@ -8,7 +8,7 @@ export default function Page() {
                     <p className="text-5xl">DIESE WEBSITE IST AUFGRUND EINER URHEBERRECHTSVERLETZUNG NICHT MEHR VERFÜGBAR.</p>
                 </div>
 
-                <Link href="https://www.h-brs.de/de" className="bg-blue-600 text-3xl"  isExternal underline="always">
+                <Link href="https://www.h-brs.de/de" className="bg-blue-600 text-3xl">
                     Hochschule Bonn-Rhein-Sieg
                 </Link>
             </div>
