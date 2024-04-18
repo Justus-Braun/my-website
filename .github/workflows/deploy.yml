@@ -10,8 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Copy files to public
-      run: mkdir /home/website-new/actions-runner/_work/my-website/my-website/public |
-        mkdir /home/website-new/actions-runner/_work/my-website/my-website/public/files |
+      run: mkdir /home/website-new/actions-runner/_work/my-website/my-website/public | true |
+        mkdir /home/website-new/actions-runner/_work/my-website/my-website/public/files | true |
         cp /home/website-new/klausuren/ /home/website-new/actions-runner/_work/my-website/my-website/public/files -r
     - name: create env file
       run: echo ${{secrets.ENV}} >> .env.production
