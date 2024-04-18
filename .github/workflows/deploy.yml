@@ -13,5 +13,12 @@ jobs:
       run: mkdir /home/website-new/actions-runner/_work/my-website/my-website/public |
         mkdir /home/website-new/actions-runner/_work/my-website/my-website/public/files |
         cp /home/website-new/klausuren/ /home/website-new/actions-runner/_work/my-website/my-website/public/files -r
+    - name: Insert into env file
+      run: | 
+        echo GITHUB_ID="${{ secrets.SECRET_GITHUB_ID }}" >> .env.production
+        echo GITHUB_SECRET="${{ secrets.SECRET_GITHUB_SECRET }}" >> .env.production
+        echo NEXTAUTH_SECRET="${{ secrets.NEXTAUTH_SECRET }}" >> .env.production
+        echo SECRET="${{ secrets.SECRET }}" >> .env.production
+
     - name: Run the Compose
       run: docker-compose up --build --detach
