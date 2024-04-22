@@ -9,7 +9,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
         return (
             <main>
                 <div className='h-screen w-screen'>
-                    <embed src={'/files/' + dirRelativeToPublicFolderOrFile} 
+                    <embed src={'/files/' + decodeURIComponent(dirRelativeToPublicFolderOrFile)} 
                         type='application/pdf'
                         width='100%'
                         height='100%'
