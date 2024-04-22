@@ -3,7 +3,8 @@ import GitHubProvider from "next-auth/providers/github";
 
 const allowedEmails = [
     'justusbraun03@gmail.com',
-    'dominok.zoric@gmail.com'
+    'dominok.zoric@gmail.com',
+    'leo.kolb03@gmail.com'
 ]
 
 const handler = NextAuth({
