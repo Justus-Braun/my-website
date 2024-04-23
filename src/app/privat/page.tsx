@@ -11,7 +11,7 @@ export default function PrivatPage() {
     
     return (
         <main>
-            <div className="h-screen w-screen">
+            <div className="h-full w-full">
                 <div className='flex flex-col p-10'>
                     {folders.map((file, index) => (
                         <Link key={index} href={"/privat/" + file}>
