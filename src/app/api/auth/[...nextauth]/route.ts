@@ -5,7 +5,8 @@ const allowedEmails = [
     'justusbraun03@gmail.com',
     'dominok.zoric@gmail.com',
     'leo.kolb03@gmail.com',
-    'hansg9387@gmail.com'    
+    'hansg9387@gmail.com',
+    'jan.seidelx@gmail.com'
 ]
 
 const handler = NextAuth({
