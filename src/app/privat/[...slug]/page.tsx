@@ -25,7 +25,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
 
     return (
         <main>
-            <div className='h-screen w-screen'>
+            <div className='h-full w-full min-h-screen'>
                 <div className='flex flex-col p-10'>
                     <Link href={'/privat/' + params.slug.slice(0, -1).join('/')}>
                         <p className='hover:text-green-500'>Back</p>
