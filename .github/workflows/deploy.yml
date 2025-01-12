@@ -21,4 +21,4 @@ jobs:
         echo SECRET=${{ secrets.SECRET }} >> .env.production
 
     - name: Run the Compose
-      run: docker-compose up --build --detach
+      run: docker compose up --build --detach
