@@ -1,9 +1,20 @@
-version: '3'
 services:
   nextjs:
     container_name: nextjs
     build:
       context: .
-      dockerfile: Dockerfile 
-    ports:
-      - "80:3000"
+      dockerfile: Dockerfile
+    expose:
+      - "3000"          # exposed ONLY to Docker network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app.rule=Host(`app.justus-braun.net`)"
+      - "traefik.http.routers.app.entrypoints=web"
+      - "traefik.http.routers.app.priority=100"
+      - "traefik.http.services.app.loadbalancer.server.port=3000"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
