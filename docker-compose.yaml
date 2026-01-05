@@ -8,12 +8,19 @@ services:
     labels:
       - "traefik.enable=true"
 
+      # Domain routing
       - "traefik.http.routers.nextjs.rule=Host(`justus-braun.net`) || Host(`www.justus-braun.net`)"
       - "traefik.http.routers.nextjs.entrypoints=websecure"
       - "traefik.http.routers.nextjs.tls=true"
 
+      # Explicit service → port
       - "traefik.http.routers.nextjs.service=nextjs"
       - "traefik.http.services.nextjs.loadbalancer.server.port=3000"
 
     networks:
       - proxy
+
+networks:
+  proxy:
+    external: true
+
