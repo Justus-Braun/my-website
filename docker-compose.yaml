@@ -4,17 +4,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    expose:
-      - "3000"          # exposed ONLY to Docker network
+
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.app.rule=Host(`justus-braun.net`)"
-      - "traefik.http.routers.app.entrypoints=web"
-      - "traefik.http.routers.app.priority=100"
-      - "traefik.http.services.app.loadbalancer.server.port=3000"
-    networks:
-      - web
 
-networks:
-  web:
-    external: true
+      - "traefik.http.routers.nextjs.rule=Host(`justus-braun.net`) || Host(`www.justus-braun.net`)"
+      - "traefik.http.routers.nextjs.entrypoints=websecure"
+      - "traefik.http.routers.nextjs.tls=true"
+
+      - "traefik.http.routers.nextjs.service=nextjs"
+      - "traefik.http.services.nextjs.loadbalancer.server.port=3000"
+
+    networks:
+      - proxy
