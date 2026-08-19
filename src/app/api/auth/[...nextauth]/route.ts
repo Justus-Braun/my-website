@@ -18,12 +18,15 @@ const allowedEmails = [
     'moritz.witt@smail.inf.h-brs.de'
 ]
 
+const githubIssuer = process.env.GITHUB_ISSUER || "https://github.com"
+
 const handler = NextAuth({
     providers: [
         // https://github.com/settings/developers
         GitHubProvider({
             clientId: process.env.GITHUB_ID as string,
-            clientSecret: process.env.GITHUB_SECRET as string
+            clientSecret: process.env.GITHUB_SECRET as string,
+            issuer: githubIssuer
         })
     ],
     callbacks: {
