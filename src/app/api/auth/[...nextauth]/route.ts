@@ -14,7 +14,8 @@ const allowedEmails = [
     'christophppetters@gmail.com',
     'mkillerhut@gmail.com',
     'bernhardwinkelhake@gmail.com',
-    'emily.nowakovski@smail.inf.h-brs.de'
+    'emily.nowakovski@smail.inf.h-brs.de',
+    'moritz.witt@smail.inf.h-brs.de'
 ]
 
 const handler = NextAuth({
